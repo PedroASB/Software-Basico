@@ -1,0 +1,77 @@
+Ex 01
+Saída esperada:
+
+dump de s: -3
+0x100 - 0xFD
+0x101 - 0xFF
+
+dump de i: -151
+0x200 - 0x69
+0x201 - 0xFF
+0x202 - 0xFF
+0x203 - 0xFF
+
+dump de c: -106
+0x300 - 0x96
+
+---------------------
+
+Ex 02
+Saída esperada:
+
+-1
+5
+-35
+42
+-127
+-128
+
+---------------------
+
+Ex 03
+
+1ª opção:
+(255)
+0xFF
+0x00
+0x00
+0x00
+
+2ª opção:
+(4294967295)
+0xFF
+0xFF
+0xFF
+0xFF
+
+Caminhos possíveis para a conversão:
+signed char -----> unsigned char
+ |                      |
+ |                      |
+ |                      |
+ v                      v
+signed int ----->  unsigned int
+
+
+---------------------
+
+Ex 04
+
+prog-01
+(4294967295 < 2)
+não
+
+
+prog-02
+(-1 < 2)
+sim
+
+
+prog-03
+(-1 < 2)
+não
+
+Pela regra da linguagem, quando há comparação envolvendo 
+um tipo com sinal e outro sem sinal, o tipo com sinal é 
+convertido para sem sinal
+(0x11111111 é interpretrado como um unsigned)

@@ -1,0 +1,53 @@
+-- Exercício 1 --
+
+(Exemplo A)
+
+struct S {
+    long  a;    // +0 bytes do início
+    char  b;    // +8 bytes do início  
+                // (+3 bytes de padding)
+    int   c;    // +12 bytes do início 
+    short d;    // +16 bytes do início
+                // (+6 bytes de padding)
+};
+
+
+(Exemplo B)
+
+
+[c][c][c][ ] [a][a][a][a] [d][d][d][d][d][d][d][d][d][ ][ ][ ][ ][ ][ ][ ] [b][b]
+
+struct S {
+    char  c[3];     // +0 bytes do início
+                    // (+1 byte de padding)
+    int   a;        // +4 bytes do início
+    union {         // +8 bytes do início
+        char x[9];
+        long y;
+    } d;
+                    // +7 byte de padding
+    short b;        // +24 bytes do início
+                    // (+6 bytes de padding)
+};
+
+
+
+-- Exercício 2 --
+
+x.a = 2048
+x.b = 17
+x.c = bebacafe
+---
+x.a = 2048
+x.b = 49
+x.c = bebacafe
+---
+x.a = 2048
+x.b = 49
+x.c = bebacafe
+
+
+   0001 0001
+ | 0010 0000
+   0011 0001
+   32 + 16 + 1 = 49 

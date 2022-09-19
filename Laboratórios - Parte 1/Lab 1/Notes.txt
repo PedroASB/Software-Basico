@@ -1,0 +1,14 @@
+O gcc apenas “orquestra” (gerencia) a pipeline do processo de geração de um executável, 
+mas não realiza todo o processo
+
+Vantagens:
+
+- Mais fácil de debugar
+- Flexibilidade (trocar algum elemento da pipeline)
+- Equipes separadas podem trabalhar no desenvolvimento de cada pipeline
+
+Comandos:
+
+-E: Parar após o pré-processamento
+-S: Parar após a compilação
+-c: Parar após o assembler

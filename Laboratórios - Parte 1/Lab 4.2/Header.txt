@@ -1,0 +1,3 @@
+-- Manipulação de bits --
+Laboratório 4.2
+Data: 23/06
